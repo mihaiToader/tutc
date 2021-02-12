@@ -13,6 +13,11 @@ module.exports = {
         filename: 'bundle.js'
     },
 
+    resolve: {
+        extensions: [ '.js', '*' ],
+        modules: [ path.resolve(__dirname, './src/frontend'), 'node_modules' ]
+    },
+
     module: {
         rules: [
             {

@@ -1,10 +1,5 @@
 
 import './index.scss';
-
-const App = () => {
-  return `
-    <div class='container'> Hello World</div>
-  `
-};
+import App from 'components/app'
 
 document.getElementById('root').innerHTML = App();
