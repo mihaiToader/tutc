@@ -31,7 +31,7 @@ class Component {
     };
 
     isMounted = () => {
-        return !!this.root()
+        return !!this.root();
     };
 
     addEventByClassName = (className, eventName, listener) => {
@@ -39,7 +39,7 @@ class Component {
         if (!element) {
             return;
         }
-        element.addEventListener(eventName, listener)
+        element.addEventListener(eventName, listener);
     };
 
     addEvent = (eventName, listener) => {
@@ -50,8 +50,7 @@ class Component {
         root.addEventListener(eventName, listener);
     };
 
-    onMount = () => {
-    };
+    onMount = () => {};
 
     updateChildren = () => {
         Object.entries(this.children).forEach(([_, component]) => {
@@ -59,7 +58,7 @@ class Component {
                 component.onMount();
                 component.updateChildren();
             }
-        })
+        });
     };
 
     update = () => {

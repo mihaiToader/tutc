@@ -8,14 +8,13 @@ const BUILD = path.join(__dirname, '../../build/');
 const pathToBuild = (filename) => path.join(BUILD, filename);
 
 app.get('/', (req, res) => {
-    res.sendFile(pathToBuild('index.html'))
+    res.sendFile(pathToBuild('index.html'));
 });
 
 app.use('/bundle.js', express.static(pathToBuild('bundle.js')));
 app.use('/bundle.css', express.static(pathToBuild('bundle.css')));
 app.use('/assets', express.static(pathToBuild('assets')));
 
-
 app.listen(port, () => {
-  console.log(`App started!`)
+    console.log(`App started!`);
 });

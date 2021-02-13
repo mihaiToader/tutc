@@ -16,13 +16,29 @@ class CreateRoom extends Component {
     }
 
     initChildComponents = () => {
-        this.addChild('returnToMenu', new ReturnToMenu({onClick: this.props.onBack}));
-        this.addChild('nameInput', new Input({onChange: this.onNameChange, label: 'Username', initialValue: this.username}));
-        this.addChild('errors', new ErrorsContainer({errors: [USERNAME_ERROR], onClose: () => this.setError(false)}));
+        this.addChild(
+            'returnToMenu',
+            new ReturnToMenu({ onClick: this.props.onBack })
+        );
+        this.addChild(
+            'nameInput',
+            new Input({
+                onChange: this.onNameChange,
+                label: 'Username',
+                initialValue: this.username,
+            })
+        );
+        this.addChild(
+            'errors',
+            new ErrorsContainer({
+                errors: [USERNAME_ERROR],
+                onClose: () => this.setError(false),
+            })
+        );
     };
 
     onMount = () => {
-        this.addEventByClassName('create', 'click', this.onCreate)
+        this.addEventByClassName('create', 'click', this.onCreate);
     };
 
     onNameChange = (username) => {
@@ -32,23 +48,24 @@ class CreateRoom extends Component {
     setError = (isError) => {
         this.setState({
             ...this.state,
-            error: isError
-        })
+            error: isError,
+        });
     };
 
     onCreate = () => {
         if (!this.username) {
-            this.setError(true)
+            this.setError(true);
         }
-
     };
 
-    renderErrors = () => this.state.error ? `
+    renderErrors = () =>
+        this.state.error
+            ? `
         <div class='create-room-errors'>
             ${this.child('errors').render()}
         </div>
-    ` : '';
-
+    `
+            : '';
 
     render = () => {
         return `
@@ -59,8 +76,8 @@ class CreateRoom extends Component {
                 ${this.renderErrors()}
                 ${this.child('returnToMenu').render()}
             </div>
-        `
-    }
+        `;
+    };
 }
 
 export default CreateRoom;

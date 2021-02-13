@@ -9,47 +9,50 @@ class HomePage extends Component {
                 start: true,
                 createRoom: false,
                 joinRoom: false,
-            }
+            },
         });
         this.initChildComponents();
     }
 
     initChildComponents() {
-        this.addChild('joinRoom', new JoinRoom({onBack: this.onStartMenu}));
-        this.addChild('createRoom', new CreateRoom({onBack: this.onStartMenu}));
+        this.addChild('joinRoom', new JoinRoom({ onBack: this.onStartMenu }));
+        this.addChild(
+            'createRoom',
+            new CreateRoom({ onBack: this.onStartMenu })
+        );
     }
 
     onCreateRoom = () => {
-      this.setState({
-          ...this.state,
-          display: {
-              start: false,
-              createRoom: true,
-              joinRoom: false,
-          }
-      })
+        this.setState({
+            ...this.state,
+            display: {
+                start: false,
+                createRoom: true,
+                joinRoom: false,
+            },
+        });
     };
 
     onJoinRoom = () => {
-      this.setState({
-          ...this.state,
-          display: {
-              start: false,
-              createRoom: false,
-              joinRoom: true,
-          }
-      })
+        this.setState({
+            ...this.state,
+            display: {
+                start: false,
+                createRoom: false,
+                joinRoom: true,
+            },
+        });
     };
 
     onStartMenu = () => {
         this.setState({
-          ...this.state,
-          display: {
-              start: true,
-              createRoom: false,
-              joinRoom: false,
-          }
-      })
+            ...this.state,
+            display: {
+                start: true,
+                createRoom: false,
+                joinRoom: false,
+            },
+        });
     };
 
     onMount = () => {
@@ -58,13 +61,13 @@ class HomePage extends Component {
     };
 
     renderStartMenu = () => {
-      if (!this.state.display.start) {
-          return '';
-      }
-      return `
+        if (!this.state.display.start) {
+            return '';
+        }
+        return `
         <div class='create-room'>Create Room</div>
         <div class='join-room'>Join Room</div>
-      `
+      `;
     };
 
     renderJoinRoom = () => {
@@ -82,7 +85,6 @@ class HomePage extends Component {
 
         return this.child('createRoom').render();
     };
-
 
     render = () => `
         <div id='${this.id}' class='homepage-container'>

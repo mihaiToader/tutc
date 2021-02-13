@@ -6,8 +6,8 @@ class Input extends Component {
     }
 
     onMount = () => {
-        this.addEventByClassName('form-field', 'input',
-            (event) => this.props.onChange(event.target.value)
+        this.addEventByClassName('form-field', 'input', (event) =>
+            this.props.onChange(event.target.value)
         );
     };
 
@@ -15,7 +15,9 @@ class Input extends Component {
         return `
             <div id='${this.id}' class='form-group'>
                 <span>${this.props.label}</span>
-                <input class='form-field' value='${this.props.initialValue || ''}'/>
+                <input class='form-field' value='${
+                    this.props.initialValue || ''
+                }'/>
             </div>
         `;
     };

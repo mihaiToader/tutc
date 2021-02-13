@@ -1,26 +1,26 @@
 .errors-container {
-  position: relative;
-  width: 100%;
-  background-color: navajowhite;
-  padding: 20px 10px 10px 10px;
-  font-size: 16px;
-  color: darkred;
-  border-radius: 4px;
+    position: relative;
+    width: 100%;
+    background-color: navajowhite;
+    padding: 20px 10px 10px 10px;
+    font-size: 16px;
+    color: darkred;
+    border-radius: 4px;
 
-  text-align: center;
+    text-align: center;
 
-  & > span {
-    display: block;
+    & > span {
+        display: block;
 
-    &:not(:last-child) {
-        margin-bottom: 10px;
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
     }
-  }
 
-  .close {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    cursor: pointer;
-  }
+    .close {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        cursor: pointer;
+    }
 }

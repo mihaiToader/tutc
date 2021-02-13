@@ -6,14 +6,14 @@ class ReturnToMenu extends Component {
     }
 
     onMount = () => {
-        this.addEvent( 'click', this.props.onClick);
+        this.addEvent('click', this.props.onClick);
     };
 
     render = () => {
         return `
             <div id='${this.id}' class='return-to-menu'>Return to menu</div>
-        `
-    }
+        `;
+    };
 }
 
 export default ReturnToMenu;

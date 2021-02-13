@@ -13,11 +13,11 @@ class VirtualDoom {
     };
 
     onMount = () => {
-      Object.entries(this.components).forEach(([_, component]) => {
-          if (component.isMounted()) {
-            component.onMount()
-          }
-      })
+        Object.entries(this.components).forEach(([_, component]) => {
+            if (component.isMounted()) {
+                component.onMount();
+            }
+        });
     };
 
     update = (componentID) => {
@@ -33,7 +33,7 @@ class VirtualDoom {
 
         this.components[componentID].onMount();
         this.components[componentID].updateChildren();
-    }
+    };
 }
 
 const virtualDoom = new VirtualDoom();
