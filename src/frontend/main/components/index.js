@@ -1,3 +1,4 @@
-import Button from './button';
+import Input from './input';
+import ErrorsContainer from './errorsContainer';
 
-export { Button }
+export { Input, ErrorsContainer }

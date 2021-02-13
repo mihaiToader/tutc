@@ -6,8 +6,8 @@ class HomePage extends Component {
     constructor() {
         super(null, {
             display: {
-                start: true,
-                createRoom: false,
+                start: false,
+                createRoom: true,
                 joinRoom: false,
             }
         });
