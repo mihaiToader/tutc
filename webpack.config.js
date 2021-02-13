@@ -14,8 +14,8 @@ module.exports = {
     },
 
     resolve: {
-        extensions: [ '.js', '*' ],
-        modules: [ path.resolve(__dirname, './src/frontend'), 'node_modules' ]
+        extensions: ['.js', '*'],
+        modules: [path.resolve(__dirname, './src/frontend'), 'node_modules']
     },
 
     module: {
@@ -35,7 +35,10 @@ module.exports = {
 
                 use: [
                     {
-                        loader: MiniCssExtractPlugin.loader
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: ''
+                        }
                     },
                     {
                         loader: 'css-loader',
@@ -67,10 +70,10 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'bundle.css'
+            filename: 'bundle.css',
         }),
         new HtmlWebpackPlugin({
-          template: path.join(__dirname, 'src/frontend/index.html')
+            template: path.join(__dirname, 'src/frontend/index.html')
         })
     ]
 };

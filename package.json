@@ -7,7 +7,7 @@
   "description": "The Ultimate Trivia Challenge",
   "main": "index.js",
   "scripts": {
-    "build:dev": "webpack --config webpack.config.js --watch",
+    "build:dev": "NODE_ENV=development webpack --config webpack.config.js --watch",
     "build": "NODE_ENV=production webpack --config webpack.config.js",
     "start:dev": "nodemon src/backend/server.js",
     "start": "node src/backend/server.js",
@@ -26,6 +26,7 @@
   "homepage": "https://github.com/mihaiToader/tutc#readme",
   "devDependencies": {
     "@babel/core": "^7.12.16",
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
     "@babel/preset-env": "^7.12.16",
     "autoprefixer": "^10.2.4",
     "babel-loader": "^8.2.2",

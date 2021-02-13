@@ -1,5 +1,7 @@
 
 import './index.scss';
-import App from 'components/app'
+import App from 'main/app'
+import virtualDoom from 'main/virtualDoom';
 
-document.getElementById('root').innerHTML = App();
+const app = new App();
+virtualDoom.render(document.getElementById('root'), app);

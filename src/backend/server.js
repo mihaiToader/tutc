@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
 
 app.use('/bundle.js', express.static(pathToBuild('bundle.js')));
 app.use('/bundle.css', express.static(pathToBuild('bundle.css')));
+app.use('/assets', express.static(pathToBuild('assets')));
 
 
 app.listen(port, () => {
