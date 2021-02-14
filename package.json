@@ -1,53 +1,53 @@
 {
-  "engines": {
-    "node": "12.x"
-  },
-  "name": "tutc",
-  "version": "1.0.0",
-  "description": "The Ultimate Trivia Challenge",
-  "main": "index.js",
-  "scripts": {
-    "build:dev": "NODE_ENV=development webpack --config webpack.config.js --watch",
-    "build": "NODE_ENV=production webpack --config webpack.config.js",
-    "start:dev": "nodemon src/backend/server.js",
-    "start": "node src/backend/server.js",
-    "format": "prettier --write src",
-    "heroku-postbuild": "yarn build"
-  },
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mihaiToader/tutc.git"
-  },
-  "author": "Mihai Toader",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mihaiToader/tutc/issues"
-  },
-  "homepage": "https://github.com/mihaiToader/tutc#readme",
-  "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/plugin-proposal-class-properties": "^7.12.13",
-    "@babel/preset-env": "^7.12.16",
-    "autoprefixer": "^10.2.4",
-    "babel-loader": "^8.2.2",
-    "css-loader": "^5.0.2",
-    "cssnano": "^4.1.10",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.1.0",
-    "mini-css-extract-plugin": "^1.3.6",
-    "nodemon": "^2.0.7",
-    "postcss": "^8.2.6",
-    "postcss-loader": "^5.0.0",
-    "prettier": "^2.2.1",
-    "sass": "^1.32.7",
-    "sass-loader": "^11.0.1",
-    "webpack": "^5.21.2",
-    "webpack-cli": "^4.5.0"
-  },
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "ws": "^7.4.3"
-  }
+    "engines": {
+        "node": "12.x"
+    },
+    "name": "tutc",
+    "version": "1.0.0",
+    "description": "The Ultimate Trivia Challenge",
+    "main": "index.js",
+    "scripts": {
+        "build:dev": "NODE_ENV=development webpack --config webpack.config.js --watch",
+        "build": "NODE_ENV=production webpack --config webpack.config.js",
+        "start:dev": "nodemon src/backend/server.js",
+        "start": "node src/backend/server.js",
+        "format": "prettier --write .",
+        "heroku-postbuild": "yarn build"
+    },
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mihaiToader/tutc.git"
+    },
+    "author": "Mihai Toader",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mihaiToader/tutc/issues"
+    },
+    "homepage": "https://github.com/mihaiToader/tutc#readme",
+    "devDependencies": {
+        "@babel/core": "^7.12.16",
+        "@babel/plugin-proposal-class-properties": "^7.12.13",
+        "@babel/preset-env": "^7.12.16",
+        "autoprefixer": "^10.2.4",
+        "babel-loader": "^8.2.2",
+        "css-loader": "^5.0.2",
+        "cssnano": "^4.1.10",
+        "file-loader": "^6.2.0",
+        "html-webpack-plugin": "^5.1.0",
+        "mini-css-extract-plugin": "^1.3.6",
+        "nodemon": "^2.0.7",
+        "postcss": "^8.2.6",
+        "postcss-loader": "^5.0.0",
+        "prettier": "^2.2.1",
+        "sass": "^1.32.7",
+        "sass-loader": "^11.0.1",
+        "webpack": "^5.21.2",
+        "webpack-cli": "^4.5.0"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "ws": "^7.4.3"
+    }
 }

@@ -2,6 +2,7 @@ const path = require('path');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const DefinePlugin = require('webpack').DefinePlugin;
 
 module.exports = {
     mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -10,12 +11,12 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
     },
 
     resolve: {
         extensions: ['.js', '*'],
-        modules: [path.resolve(__dirname, './src/frontend'), 'node_modules']
+        modules: [path.resolve(__dirname, './src/frontend'), 'node_modules'],
     },
 
     module: {
@@ -26,9 +27,9 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
+                        presets: ['@babel/preset-env'],
+                    },
+                },
             },
             {
                 test: /\.(sa|sc|c)ss$/,
@@ -37,22 +38,22 @@ module.exports = {
                     {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
-                            publicPath: ''
-                        }
+                            publicPath: '',
+                        },
                     },
                     {
                         loader: 'css-loader',
                     },
                     {
-                        loader: 'postcss-loader'
+                        loader: 'postcss-loader',
                     },
                     {
                         loader: 'sass-loader',
                         options: {
-                            implementation: require('sass')
-                        }
-                    }
-                ]
+                            implementation: require('sass'),
+                        },
+                    },
+                ],
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/,
@@ -61,19 +62,24 @@ module.exports = {
                         loader: 'file-loader',
 
                         options: {
-                            outputPath: 'assets/images'
-                        }
-                    }
-                ]
+                            outputPath: 'assets/images',
+                        },
+                    },
+                ],
             },
-        ]
+        ],
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'bundle.css',
         }),
+        new DefinePlugin({
+            'process.env.WEBSOCKET_URL': process.env.WEBSOCKET_URL
+                ? JSON.stringify(process.env.WEBSOCKET_URL)
+                : JSON.stringify('ws://127.0.0.1:3000'),
+        }),
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src/frontend/index.html')
-        })
-    ]
+            template: path.join(__dirname, 'src/frontend/index.html'),
+        }),
+    ],
 };

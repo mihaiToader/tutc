@@ -1,16 +1,14 @@
 {
-  "presets": [
-    [
-      "@babel/env",
-      {
-        "targets": {
-            "browsers": [",> 1%", "last 2 versions", "chrome >= 40"]
-        },
-        "useBuiltIns": "usage"
-      }
-    ]
-  ],
-  "plugins": [
-        "@babel/plugin-proposal-class-properties"
-    ]
+    "presets": [
+        [
+            "@babel/env",
+            {
+                "targets": {
+                    "browsers": [",> 1%", "last 2 versions", "chrome >= 40"]
+                },
+                "useBuiltIns": "usage"
+            }
+        ]
+    ],
+    "plugins": ["@babel/plugin-proposal-class-properties"]
 }
