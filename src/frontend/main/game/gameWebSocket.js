@@ -4,9 +4,7 @@ class GameWebSocket {
     callbacks = {};
 
     init = () => {
-        this.connection = new WebSocket(
-            process.env.WEBSOCKET_URL || 'ws://127.0.0.1:3000'
-        );
+        this.connection = new WebSocket(process.env.WEBSOCKET_URL);
         this.connection.onopen = this.onOpen;
         this.connection.onerror = this.onError;
         this.connection.onmessage = this.onMessage;
