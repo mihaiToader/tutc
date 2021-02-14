@@ -1,5 +1,5 @@
 import Component from 'main/component';
-import { Input, ErrorsContainer } from 'main/components';
+import { Input, ErrorsContainer, Loading } from 'main/components';
 
 import ReturnToMenu from './returnToMenu';
 import HttpApi from '../httpApi';
@@ -10,6 +10,7 @@ class CreateRoom extends Component {
     constructor(props) {
         super(props, {
             error: false,
+            loading: false,
         });
         this.initChildComponents();
 
@@ -36,6 +37,12 @@ class CreateRoom extends Component {
                 onClose: () => this.setError(false),
             })
         );
+        this.addChild(
+            'loading',
+            new Loading({
+                loading: false,
+            })
+        );
     };
 
     onMount = () => {
@@ -53,18 +60,31 @@ class CreateRoom extends Component {
         });
     };
 
+    setLoading = (loading) => {
+        this.setState({
+            ...this.state,
+            loading,
+        });
+    };
+
     onCreate = () => {
         if (!this.username) {
             this.setError(true);
         }
-        HttpApi.createRoom(this.username).then((response) => {
-            if (response.room) {
-                this.props.onStartGame({
-                    username: this.username,
-                    room: response.room,
-                });
-            }
-        });
+
+        this.setLoading(true);
+        HttpApi.createRoom(this.username).then(
+            (response) => {
+                this.setLoading(false);
+                if (response.room) {
+                    this.props.onStartGame({
+                        username: this.username,
+                        room: response.room,
+                    });
+                }
+            },
+            () => this.setLoading(false)
+        );
     };
 
     renderErrors = () =>
@@ -76,19 +96,15 @@ class CreateRoom extends Component {
     `
             : '';
 
-    updateChildrenProps = () => {
-        this.updateChildProps('nameInput', { initialValue: this.username });
-    };
-
     render = () => {
-        this.updateChildrenProps();
         return `
             <div id='${this.id}' class="create-room-container">
                 <span class="title">Create room</span>
-                ${this.child('nameInput')}
+                ${this.child('nameInput', { initialValue: this.username })}
                 <div class="create">Create</div>
                 ${this.renderErrors()}
                 ${this.child('returnToMenu')}
+                ${this.child('loading', { loading: this.state.loading })}
             </div>
         `;
     };

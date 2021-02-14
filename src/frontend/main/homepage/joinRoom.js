@@ -1,5 +1,5 @@
 import Component from 'main/component';
-import { Input, ErrorsContainer } from 'main/components';
+import { Input, ErrorsContainer, Loading } from 'main/components';
 
 import ReturnToMenu from './returnToMenu';
 import HttpApi from '../httpApi';
@@ -15,6 +15,7 @@ class JoinRoom extends Component {
     constructor(props) {
         super(props, {
             error: null,
+            loading: false,
         });
         this.initChildComponents();
 
@@ -51,6 +52,12 @@ class JoinRoom extends Component {
                 onClose: () => this.setError(false),
             })
         );
+        this.addChild(
+            'loading',
+            new Loading({
+                loading: false,
+            })
+        );
     };
 
     onMount = () => {
@@ -72,6 +79,13 @@ class JoinRoom extends Component {
         });
     };
 
+    setLoading = (loading) => {
+        this.setState({
+            ...this.state,
+            loading,
+        });
+    };
+
     onJoin = () => {
         const errors = [];
         if (!this.roomName) {
@@ -86,8 +100,10 @@ class JoinRoom extends Component {
         }
         this.setError(null);
 
+        this.setLoading(true);
         HttpApi.checkIfRoomAvailable(this.roomName, this.username).then(
             (response) => {
+                this.setLoading(false);
                 const errors = [];
                 if (!response.available) {
                     errors.push(ERRORS.roomNotFound);
@@ -102,7 +118,8 @@ class JoinRoom extends Component {
                     room: this.roomName,
                     username: this.username,
                 });
-            }
+            },
+            () => this.setLoading(false)
         );
     };
 
@@ -110,27 +127,21 @@ class JoinRoom extends Component {
         this.state.error
             ? `
         <div class='create-room-errors'>
-            ${this.child('errors')}
+            ${this.child('errors', { errors: this.state.error })}
         </div>
     `
             : '';
 
-    updateChildrenProps = () => {
-        this.updateChildProps('errors', { errors: this.state.error });
-        this.updateChildProps('roomInput', { initialValue: this.roomName });
-        this.updateChildProps('usernameInput', { initialValue: this.username });
-    };
-
     render = () => {
-        this.updateChildrenProps();
         return `
             <div id='${this.id}' class="join-room-container">
                 <span class="title">Join room</span>
-                ${this.child('roomInput')}
-                ${this.child('usernameInput')}
+                ${this.child('roomInput', { initialValue: this.roomName })}
+                ${this.child('usernameInput', { initialValue: this.username })}
                 <div class="join">Join</div>
                 ${this.renderErrors()}
                 ${this.child('returnToMenu')}
+                ${this.child('loading', { loading: this.state.loading })}
             </div>
         `;
     };
