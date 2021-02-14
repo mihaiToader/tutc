@@ -3,8 +3,8 @@ import JoinRoom from './joinRoom';
 import CreateRoom from './createRoom';
 
 class HomePage extends Component {
-    constructor() {
-        super(null, {
+    constructor(props) {
+        super(props, {
             display: {
                 start: true,
                 createRoom: false,
@@ -15,12 +15,16 @@ class HomePage extends Component {
     }
 
     initChildComponents() {
-        this.addChild('joinRoom', new JoinRoom({ onBack: this.onStartMenu }));
+        this.addChild('joinRoom', new JoinRoom({ onBack: this.onStartMenu, onStartGame: this.onStartGame }));
         this.addChild(
             'createRoom',
-            new CreateRoom({ onBack: this.onStartMenu })
+            new CreateRoom({ onBack: this.onStartMenu, onStartGame: this.onStartGame })
         );
     }
+
+    onStartGame = (gameData) => {
+        this.props.onStartGame(gameData);
+    };
 
     onCreateRoom = () => {
         this.setState({
@@ -75,7 +79,7 @@ class HomePage extends Component {
             return '';
         }
 
-        return this.child('joinRoom').render();
+        return this.child('joinRoom');
     };
 
     renderCreateRoom = () => {
@@ -83,7 +87,7 @@ class HomePage extends Component {
             return '';
         }
 
-        return this.child('createRoom').render();
+        return this.child('createRoom');
     };
 
     render = () => `

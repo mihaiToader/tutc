@@ -2,9 +2,14 @@ import Component from 'main/component';
 import { Input, ErrorsContainer } from 'main/components';
 
 import ReturnToMenu from './returnToMenu';
+import HttpApi from '../httpApi';
 
-const ROOM_ERROR = 'Room not found! :(';
-const USERNAME_ERROR = 'Username can not be empty! Please add something ^_^';
+const ERRORS = {
+    roomEmpty: 'Room can not be empty!',
+    usernameEmpty: 'Username can not be empty! Please add something ^_^',
+    roomNotFound: 'Room not found :(',
+    usernameUnavailable: 'Username already exists in that room...',
+};
 
 class JoinRoom extends Component {
     constructor(props) {
@@ -70,22 +75,37 @@ class JoinRoom extends Component {
     onJoin = () => {
         const errors = [];
         if (!this.roomName) {
-            errors.push(ROOM_ERROR);
+            errors.push(ERRORS.roomEmpty);
         }
         if (!this.username) {
-            errors.push(USERNAME_ERROR);
+            errors.push(ERRORS.usernameEmpty);
         }
-        if (errors.length > 0) {
+        if (!!errors.length) {
             this.setError(errors);
             return;
         }
+        this.setError(null);
+
+        HttpApi.checkIfRoomAvailable(this.roomName, this.username).then((response) => {
+            const errors = [];
+            if (!response.available) {
+                errors.push(ERRORS.roomNotFound)
+            } else if (!response.usernameAvailable) {
+                errors.push(ERRORS.usernameUnavailable)
+            }
+            if (!!errors.length) {
+                this.setError(errors);
+                return;
+            }
+            this.props.onStartGame({room: this.roomName, username: this.username});
+        });
     };
 
     renderErrors = () =>
         this.state.error
             ? `
         <div class='create-room-errors'>
-            ${this.child('errors').render()}
+            ${this.child('errors')}
         </div>
     `
             : '';
@@ -101,11 +121,11 @@ class JoinRoom extends Component {
         return `
             <div id='${this.id}' class="join-room-container">
                 <span class="title">Join room</span>
-                ${this.child('roomInput').render()}
-                ${this.child('usernameInput').render()}
+                ${this.child('roomInput')}
+                ${this.child('usernameInput')}
                 <div class="join">Join</div>
                 ${this.renderErrors()}
-                ${this.child('returnToMenu').render()}
+                ${this.child('returnToMenu')}
             </div>
         `;
     };

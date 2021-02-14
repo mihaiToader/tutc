@@ -2,6 +2,7 @@ import Component from 'main/component';
 import { Input, ErrorsContainer } from 'main/components';
 
 import ReturnToMenu from './returnToMenu';
+import HttpApi from '../httpApi';
 
 const USERNAME_ERROR = 'Username can not be empty! Please add something ^_^';
 
@@ -56,13 +57,18 @@ class CreateRoom extends Component {
         if (!this.username) {
             this.setError(true);
         }
+        HttpApi.createRoom(this.username).then(response => {
+            if (response.room) {
+                this.props.onStartGame({username: this.username, room: response.room})
+            }
+        })
     };
 
     renderErrors = () =>
         this.state.error
             ? `
         <div class='create-room-errors'>
-            ${this.child('errors').render()}
+            ${this.child('errors')}
         </div>
     `
             : '';
@@ -76,10 +82,10 @@ class CreateRoom extends Component {
         return `
             <div id='${this.id}' class="create-room-container">
                 <span class="title">Create room</span>
-                ${this.child('nameInput').render()}
+                ${this.child('nameInput')}
                 <div class="create">Create</div>
                 ${this.renderErrors()}
-                ${this.child('returnToMenu').render()}
+                ${this.child('returnToMenu')}
             </div>
         `;
     };

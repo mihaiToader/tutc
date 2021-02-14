@@ -1,0 +1,29 @@
+.game-container {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+    background-color: lightyellow;
+    height: 100%;
+
+    .top-content {
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px solid brown;
+
+        .split-line {
+            border-right: 1px solid brown;
+            height: 100%;
+        }
+
+        .back-to-menu {
+            cursor: pointer;
+            &:hover {
+                color: darkred;
+            }
+        }
+    }
+}

@@ -3,7 +3,6 @@ import Component from 'main/component';
 class ErrorsContainer extends Component {
     constructor(props) {
         super(props);
-        console.log(this.props.errors);
     }
 
     onMount = () => {

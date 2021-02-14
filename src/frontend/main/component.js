@@ -24,10 +24,10 @@ class Component {
         this.children[name] = component;
     };
 
-    child = (name) => this.children[name];
+    child = (name) => this.children[name] ? this.children[name].render() : '';
 
     updateChildProps = (name, newProp) => {
-        const child = this.child(name);
+        const child = this.children[name];
         child.props = { ...child.props, ...newProp };
     };
 
