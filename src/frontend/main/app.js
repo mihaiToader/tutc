@@ -12,7 +12,10 @@ class App extends Component {
     }
 
     initChildComponents() {
-        this.addChild('homepage', new Homepage({ onStartGame: this.onStartGame }));
+        this.addChild(
+            'homepage',
+            new Homepage({ onStartGame: this.onStartGame })
+        );
         this.addChild('game', new Game({ onBack: this.onBackToMenu }));
     }
 
@@ -21,14 +24,14 @@ class App extends Component {
         this.setState({
             ...this.state,
             gameData,
-        })
+        });
     };
 
     onBackToMenu = () => {
         this.setState({
             ...this.state,
             gameData: null,
-        })
+        });
     };
 
     renderContent = () => {

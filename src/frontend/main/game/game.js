@@ -6,15 +6,14 @@ class Game extends Component {
         this.initChildComponents();
     }
 
-    initChildComponents = () => {
-    };
+    initChildComponents = () => {};
 
     onMount = () => {
         this.addEventByClassName('back-to-menu', 'click', this.onLeave);
     };
 
     onLeave = () => {
-      this.props.onBack();
+        this.props.onBack();
     };
 
     render = () => `

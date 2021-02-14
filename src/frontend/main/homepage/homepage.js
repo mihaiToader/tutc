@@ -15,10 +15,19 @@ class HomePage extends Component {
     }
 
     initChildComponents() {
-        this.addChild('joinRoom', new JoinRoom({ onBack: this.onStartMenu, onStartGame: this.onStartGame }));
+        this.addChild(
+            'joinRoom',
+            new JoinRoom({
+                onBack: this.onStartMenu,
+                onStartGame: this.onStartGame,
+            })
+        );
         this.addChild(
             'createRoom',
-            new CreateRoom({ onBack: this.onStartMenu, onStartGame: this.onStartGame })
+            new CreateRoom({
+                onBack: this.onStartMenu,
+                onStartGame: this.onStartGame,
+            })
         );
     }
 

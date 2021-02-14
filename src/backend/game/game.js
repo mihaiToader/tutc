@@ -3,12 +3,12 @@ const ws = require('ws');
 
 class Game {
     rooms = {
-        'tn18r7b': {
-            'admin': 'Muie',
-            'players': [],
-            'started': false,
-            'adminJoined': false
-        }
+        tn18r7b: {
+            admin: 'Muie',
+            players: [],
+            started: false,
+            adminJoined: false,
+        },
     };
 
     constructor() {
@@ -49,7 +49,10 @@ class Game {
         expressApp.get('/room/available/:roomName/:username', (req, res) => {
             const room = this.rooms[req.params.roomName];
             const available = !!room && room.started === false;
-            const usernameAvailable = !!room && !room.players.includes(req.params.username) && room.admin !== req.params.username;
+            const usernameAvailable =
+                !!room &&
+                !room.players.includes(req.params.username) &&
+                room.admin !== req.params.username;
             res.send({ available, usernameAvailable });
             res.end();
         });

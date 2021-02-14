@@ -86,19 +86,24 @@ class JoinRoom extends Component {
         }
         this.setError(null);
 
-        HttpApi.checkIfRoomAvailable(this.roomName, this.username).then((response) => {
-            const errors = [];
-            if (!response.available) {
-                errors.push(ERRORS.roomNotFound)
-            } else if (!response.usernameAvailable) {
-                errors.push(ERRORS.usernameUnavailable)
+        HttpApi.checkIfRoomAvailable(this.roomName, this.username).then(
+            (response) => {
+                const errors = [];
+                if (!response.available) {
+                    errors.push(ERRORS.roomNotFound);
+                } else if (!response.usernameAvailable) {
+                    errors.push(ERRORS.usernameUnavailable);
+                }
+                if (!!errors.length) {
+                    this.setError(errors);
+                    return;
+                }
+                this.props.onStartGame({
+                    room: this.roomName,
+                    username: this.username,
+                });
             }
-            if (!!errors.length) {
-                this.setError(errors);
-                return;
-            }
-            this.props.onStartGame({room: this.roomName, username: this.username});
-        });
+        );
     };
 
     renderErrors = () =>

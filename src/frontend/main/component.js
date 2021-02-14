@@ -24,7 +24,7 @@ class Component {
         this.children[name] = component;
     };
 
-    child = (name) => this.children[name] ? this.children[name].render() : '';
+    child = (name) => (this.children[name] ? this.children[name].render() : '');
 
     updateChildProps = (name, newProp) => {
         const child = this.children[name];

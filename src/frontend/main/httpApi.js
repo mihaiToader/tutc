@@ -24,7 +24,7 @@ class HttpApi {
 
     static checkIfRoomAvailable = (roomName, username) => {
         return this.get(`/room/available/${roomName}/${username}`);
-    }
+    };
 }
 
 export default HttpApi;

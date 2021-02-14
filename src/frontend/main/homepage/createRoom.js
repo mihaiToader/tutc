@@ -57,11 +57,14 @@ class CreateRoom extends Component {
         if (!this.username) {
             this.setError(true);
         }
-        HttpApi.createRoom(this.username).then(response => {
+        HttpApi.createRoom(this.username).then((response) => {
             if (response.room) {
-                this.props.onStartGame({username: this.username, room: response.room})
+                this.props.onStartGame({
+                    username: this.username,
+                    room: response.room,
+                });
             }
-        })
+        });
     };
 
     renderErrors = () =>
