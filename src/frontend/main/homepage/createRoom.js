@@ -80,6 +80,7 @@ class CreateRoom extends Component {
                     this.props.onStartGame({
                         username: this.username,
                         room: response.room,
+                        admin: true,
                     });
                 }
             },

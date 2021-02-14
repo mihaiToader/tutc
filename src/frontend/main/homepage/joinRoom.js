@@ -98,7 +98,6 @@ class JoinRoom extends Component {
             this.setError(errors);
             return;
         }
-        this.setError(null);
 
         this.setLoading(true);
         HttpApi.checkIfRoomAvailable(this.roomName, this.username).then(
@@ -117,6 +116,7 @@ class JoinRoom extends Component {
                 this.props.onStartGame({
                     room: this.roomName,
                     username: this.username,
+                    admin: false,
                 });
             },
             () => this.setLoading(false)

@@ -1,0 +1,23 @@
+.game-field-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    flex-direction: column;
+    background-color: lightyellow;
+    height: 70%;
+
+    .start-game {
+        padding: 10px;
+        border: 1px solid greenyellow;
+        background-color: greenyellow;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .wait-for-admin {
+        color: darkred;
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
