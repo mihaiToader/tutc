@@ -6,9 +6,9 @@ class HomePage extends Component {
     constructor(props) {
         super(props, {
             display: {
-                start: false,
+                start: true,
                 createRoom: false,
-                joinRoom: true,
+                joinRoom: false,
             },
         });
         this.initChildComponents();
