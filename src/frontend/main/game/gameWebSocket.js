@@ -24,6 +24,7 @@ class GameWebSocket {
 
     onMessage = (messageEvent) => {
         const { event, data } = JSON.parse(messageEvent.data);
+        console.log(event, data);
         if (!this.callbacks[event]) {
             return;
         }
@@ -47,6 +48,20 @@ class GameWebSocket {
     onUserLeft = () => {
         this.sendMessage({
             event: 'user-left',
+        });
+    };
+
+    onStartGame = (roomData) => {
+        this.sendMessage({
+            event: 'start-game',
+            data: roomData,
+        });
+    };
+
+    onSendAnswer = (data) => {
+        this.sendMessage({
+            event: 'answer-question',
+            data,
         });
     };
 }

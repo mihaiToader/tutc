@@ -13,7 +13,7 @@ class Game extends Component {
 
     initChildComponents = () => {
         this.addChild('players', new Players());
-        this.addChild('gameField', new GameField());
+        this.addChild('gameField', new GameField(this.props));
     };
 
     onMount = () => {
@@ -43,7 +43,7 @@ class Game extends Component {
                     Return to menu
                 </div>
             </div>
-            ${this.child('gameField', { admin: this.props.admin })}
+            ${this.child('gameField', this.props)}
             ${this.child('players')}
         </div>
     `;

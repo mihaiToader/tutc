@@ -23,7 +23,7 @@ class Players extends Component {
             acc += `
                 <div class="player">
                     <div>${player.username}</div>
-                    <div>${player.correctAnswers}</div>
+                    <div>${player.score}</div>
                 </div>
             `;
             return acc;
@@ -37,7 +37,7 @@ class Players extends Component {
                     Player
                 </div>
                 <div>
-                    Correct answers
+                    Score
                 </div>
             </div>
             ${this.renderPlayers()}

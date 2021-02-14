@@ -58,6 +58,24 @@ class Component {
         element.addEventListener(eventName, listener);
     };
 
+    addEventsByClassName = (className, eventName, listener) => {
+        const elements = this.root().getElementsByClassName(className);
+        if (!elements) {
+            return;
+        }
+        Array.from(elements).forEach((element) =>
+            element.addEventListener(eventName, listener)
+        );
+    };
+
+    addClassToElementByID = (elementID, newClassName) => {
+        const element = document.getElementById(elementID);
+        if (!element) {
+            return;
+        }
+        element.classList.add(newClassName);
+    };
+
     addEvent = (eventName, listener) => {
         const root = this.root();
         if (!root) {

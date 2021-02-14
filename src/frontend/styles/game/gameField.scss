@@ -1,11 +1,11 @@
 .game-field-container {
     display: flex;
     align-items: center;
-    justify-content: center;
     overflow: auto;
     flex-direction: column;
     background-color: lightyellow;
     height: 70%;
+    width: 100%;
 
     .start-game {
         padding: 10px;
@@ -13,11 +13,75 @@
         background-color: greenyellow;
         border-radius: 4px;
         cursor: pointer;
+        margin: auto 0;
     }
 
     .wait-for-admin {
         color: darkred;
         font-size: 16px;
         font-weight: bold;
+        margin: auto 0;
+    }
+
+    .question-container {
+        margin-top: 10px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .question {
+            margin-bottom: 15px;
+            width: 80%;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .answers-container {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+
+            .answer {
+                width: 43%;
+                text-align: center;
+                padding: 15px;
+                margin: 5px;
+                border: 1px solid darkgrey;
+                border-radius: 4px;
+                cursor: pointer;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+
+            .correct {
+                background-color: lightgreen;
+            }
+
+            .wrong {
+                background-color: red;
+            }
+        }
+    }
+
+    .winners-container {
+        height: 10%;
+        font-size: 16px;
+        color: black;
+        font-weight: bold;
+    }
+
+    .result {
+        margin-top: 10px;
+    }
+
+    .correct-answer {
+        color: darkgreen;
+    }
+
+    .wrong-answer {
+        color: darkred;
     }
 }

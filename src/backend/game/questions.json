@@ -4,435 +4,554 @@
         "type": "multiple",
         "difficulty": "easy",
         "question": "Who created the digital distribution platform Steam?",
-        "correct_answer": "Valve",
-        "incorrect_answers": ["Pixeltail Games", "Ubisoft", "Electronic Arts"]
+        "correctAnswer": "Valve",
+        "answers": ["Valve", "Pixeltail Games", "Ubisoft", "Electronic Arts"],
+        "id": 0
     },
     {
         "category": "Geography",
         "type": "multiple",
         "difficulty": "easy",
         "question": "What is the capital of Indonesia?",
-        "correct_answer": "Jakarta",
-        "incorrect_answers": ["Bandung", "Medan", "Palembang"]
+        "correctAnswer": "Jakarta",
+        "answers": ["Jakarta", "Bandung", "Medan", "Palembang"],
+        "id": 1
     },
     {
         "category": "Geography",
         "type": "multiple",
         "difficulty": "medium",
         "question": "In which English county is Stonehenge?",
-        "correct_answer": "Wiltshire",
-        "incorrect_answers": ["Somerset", "Cumbria", "Herefordshire"]
+        "correctAnswer": "Wiltshire",
+        "answers": ["Wiltshire", "Somerset", "Cumbria", "Herefordshire"],
+        "id": 2
     },
     {
         "category": "Geography",
         "type": "multiple",
         "difficulty": "easy",
         "question": "How many federal states does Germany have?",
-        "correct_answer": "16",
-        "incorrect_answers": ["13", "32", "25"]
+        "correctAnswer": "16",
+        "answers": ["16", "13", "32", "25"],
+        "id": 3
     },
     {
         "category": "Science: Computers",
         "type": "multiple",
         "difficulty": "medium",
         "question": "Which of the following languages is used as a scripting language in the Unity 3D game engine?",
-        "correct_answer": "C#",
-        "incorrect_answers": ["Java", "C++", "Objective-C"]
+        "correctAnswer": "C#",
+        "answers": ["C#", "Java", "C++", "Objective-C"],
+        "id": 4
     },
     {
         "category": "Science & Nature",
         "type": "multiple",
         "difficulty": "medium",
         "question": "The Axiom of Preventive Medicine states that people with ___ risk for a disease should be screened and we should treat ___ of those people.",
-        "correct_answer": "low, all",
-        "incorrect_answers": ["low, some", "high, all", "high, some"]
+        "correctAnswer": "low, all",
+        "answers": ["low, all", "low, some", "high, all", "high, some"],
+        "id": 5
     },
     {
         "category": "Entertainment: Comics",
         "type": "multiple",
         "difficulty": "medium",
         "question": "What was the name of the first Robin in the Batman comics?",
-        "correct_answer": "Dick Grayson",
-        "incorrect_answers": ["Bruce Wayne", "Jason Todd", "Tim Drake"]
+        "correctAnswer": "Dick Grayson",
+        "answers": ["Dick Grayson", "Bruce Wayne", "Jason Todd", "Tim Drake"],
+        "id": 6
     },
     {
         "category": "Entertainment: Video Games",
         "type": "multiple",
         "difficulty": "hard",
         "question": "When was Steam first released?",
-        "correct_answer": "2003",
-        "incorrect_answers": ["2004", "2011", "2007"]
+        "correctAnswer": "2003",
+        "answers": ["2003", "2004", "2011", "2007"],
+        "id": 7
     },
     {
         "category": "Entertainment: Music",
         "type": "multiple",
         "difficulty": "hard",
         "question": "Which Death Grips album is the only one to feature a band member?",
-        "correct_answer": "No Love Deep Web",
-        "incorrect_answers": [
+        "correctAnswer": "No Love Deep Web",
+        "answers": [
+            "No Love Deep Web",
             "Bottomless Pit",
             "The Money Store",
             "The Powers That B"
-        ]
+        ],
+        "id": 8
     },
     {
         "category": "Entertainment: Video Games",
         "type": "multiple",
         "difficulty": "medium",
         "question": "Which game was the first time Mario was voiced by Charles Martinet?",
-        "correct_answer": "Mario&#039;s Game Gallery",
-        "incorrect_answers": ["Super Mario 64", "Mario Tennis", "Dr. Mario 64"]
+        "correctAnswer": "Mario&#039;s Game Gallery",
+        "answers": [
+            "Mario&#039;s Game Gallery",
+            "Super Mario 64",
+            "Mario Tennis",
+            "Dr. Mario 64"
+        ],
+        "id": 9
     },
     {
         "category": "Entertainment: Video Games",
         "type": "multiple",
         "difficulty": "easy",
         "question": "In what city in the dystopia alternate future of Half-Life 2 do you first start in?",
-        "correct_answer": "City 17",
-        "incorrect_answers": ["City 18", "City 6", "City 45"]
+        "correctAnswer": "City 17",
+        "answers": ["City 17", "City 18", "City 6", "City 45"],
+        "id": 10
     },
     {
         "category": "Entertainment: Music",
         "type": "multiple",
         "difficulty": "medium",
         "question": "Which one of these Pink Floyd albums were also a movie?",
-        "correct_answer": "The Wall",
-        "incorrect_answers": [
+        "correctAnswer": "The Wall",
+        "answers": [
+            "The Wall",
             "The Dark Side of the Moon",
             "Wish You Were Here",
             "Animals"
-        ]
+        ],
+        "id": 11
     },
     {
         "category": "Entertainment: Music",
         "type": "multiple",
         "difficulty": "medium",
         "question": "May 16th of every year is known as __________ Day, named after a punk band prominent in the 1990s.",
-        "correct_answer": "Lagwagon",
-        "incorrect_answers": ["Goldfinger", "Less Than Jake", "Lit"]
+        "correctAnswer": "Lagwagon",
+        "answers": ["Lagwagon", "Goldfinger", "Less Than Jake", "Lit"],
+        "id": 12
     },
     {
         "category": "Entertainment: Japanese Anime & Manga",
         "type": "multiple",
         "difficulty": "hard",
         "question": "Which of these anime have over 7,500 episodes?",
-        "correct_answer": "Sazae-san",
-        "incorrect_answers": ["Naruto", "One Piece", "Chibi Maruko-chan"]
+        "correctAnswer": "Sazae-san",
+        "answers": ["Sazae-san", "Naruto", "One Piece", "Chibi Maruko-chan"],
+        "id": 13
     },
     {
         "category": "Geography",
         "type": "multiple",
         "difficulty": "hard",
         "question": "When does Finland celebrate their independence day?",
-        "correct_answer": "December 6th",
-        "incorrect_answers": ["January 2nd", "November 12th", "February 8th"]
+        "correctAnswer": "December 6th",
+        "answers": [
+            "December 6th",
+            "January 2nd",
+            "November 12th",
+            "February 8th"
+        ],
+        "id": 14
     },
     {
         "category": "Entertainment: Film",
         "type": "multiple",
         "difficulty": "medium",
         "question": "What year did the James Cameron film &quot;Titanic&quot; come out in theaters?",
-        "correct_answer": "1997",
-        "incorrect_answers": ["1996", "1998", "1999"]
+        "correctAnswer": "1997",
+        "answers": ["1997", "1996", "1998", "1999"],
+        "id": 15
     },
     {
         "category": "Entertainment: Video Games",
         "type": "multiple",
         "difficulty": "medium",
         "question": "Who is the English voice actor for Sora from the Kingdom Hearts series?",
-        "correct_answer": "Haley Joel Osment",
-        "incorrect_answers": ["Kōki Uchiyama", "Jesse McCartney", "Miyu Irino"]
+        "correctAnswer": "Haley Joel Osment",
+        "answers": [
+            "Haley Joel Osment",
+            "Kōki Uchiyama",
+            "Jesse McCartney",
+            "Miyu Irino"
+        ],
+        "id": 16
     },
     {
         "category": "Science: Gadgets",
         "type": "multiple",
         "difficulty": "hard",
         "question": "Which of the following cellular device companies is NOT headquartered in Asia?",
-        "correct_answer": "Nokia",
-        "incorrect_answers": ["LG Electronics", "Samsung", "HTC"]
+        "correctAnswer": "Nokia",
+        "answers": ["Nokia", "LG Electronics", "Samsung", "HTC"],
+        "id": 17
     },
     {
         "category": "Entertainment: Television",
         "type": "multiple",
         "difficulty": "easy",
         "question": "How many seasons did the Sci-Fi television show &quot;Stargate Atlantis&quot; have?",
-        "correct_answer": "5",
-        "incorrect_answers": ["10", "2", "7"]
+        "correctAnswer": "5",
+        "answers": ["5", "10", "2", "7"],
+        "id": 18
     },
     {
         "category": "Vehicles",
         "type": "multiple",
         "difficulty": "hard",
         "question": "What year did the Chevrolet LUV mini truck make its debut?",
-        "correct_answer": "1972",
-        "incorrect_answers": ["1982", "1975", "1973"]
+        "correctAnswer": "1972",
+        "answers": ["1972", "1982", "1975", "1973"],
+        "id": 19
     },
     {
         "category": "Entertainment: Music",
         "type": "multiple",
         "difficulty": "medium",
         "question": "Who is the vocalist and frontman of rock band &quot;Guns N&#039; Roses&quot;?",
-        "correct_answer": "Axl Rose",
-        "incorrect_answers": ["Kurt Cobain", "Slash", "Bono"]
+        "correctAnswer": "Axl Rose",
+        "answers": ["Axl Rose", "Kurt Cobain", "Slash", "Bono"],
+        "id": 20
     },
     {
         "category": "Entertainment: Film",
         "type": "multiple",
         "difficulty": "medium",
         "question": "Which documentary film maker wrote and starred in the film &quot;My Scientology Movie&quot; which first debuted in 2015?",
-        "correct_answer": "Louis Theroux",
-        "incorrect_answers": ["Errol Morris", "Joe Berlinger", "Adam Curtis"]
+        "correctAnswer": "Louis Theroux",
+        "answers": [
+            "Louis Theroux",
+            "Errol Morris",
+            "Joe Berlinger",
+            "Adam Curtis"
+        ],
+        "id": 21
     },
     {
         "category": "Entertainment: Television",
         "type": "multiple",
         "difficulty": "easy",
         "question": "Who played the Waitress in the Spam sketch of &quot;Monty Python&#039;s Flying Circus&quot;?",
-        "correct_answer": "Terry Jones",
-        "incorrect_answers": ["Eric Idle", "Graham Chapman", "John Cleese"]
+        "correctAnswer": "Terry Jones",
+        "answers": [
+            "Terry Jones",
+            "Eric Idle",
+            "Graham Chapman",
+            "John Cleese"
+        ],
+        "id": 22
     },
     {
         "category": "General Knowledge",
         "type": "multiple",
         "difficulty": "medium",
         "question": "What was the original name of the search engine &quot;Google&quot;?",
-        "correct_answer": "BackRub",
-        "incorrect_answers": ["CatMassage", "SearchPro", "Netscape Navigator"]
+        "correctAnswer": "BackRub",
+        "answers": ["BackRub", "CatMassage", "SearchPro", "Netscape Navigator"],
+        "id": 23
     },
     {
         "category": "Entertainment: Video Games",
         "type": "multiple",
         "difficulty": "easy",
         "question": "What was the release date of &quot;Grand Theft Auto IV&quot;?",
-        "correct_answer": "April 29, 2008",
-        "incorrect_answers": ["May 21, 2009", "June 22, 2010", "July 28, 2008"]
+        "correctAnswer": "April 29, 2008",
+        "answers": [
+            "April 29, 2008",
+            "May 21, 2009",
+            "June 22, 2010",
+            "July 28, 2008"
+        ],
+        "id": 24
     },
     {
         "category": "History",
         "type": "multiple",
         "difficulty": "hard",
         "question": "What did the abbreviation &quot;RMS&quot; stand for in the RMS Titanic in 1912?",
-        "correct_answer": "Royal Mail Ship",
-        "incorrect_answers": [
+        "correctAnswer": "Royal Mail Ship",
+        "answers": [
+            "Royal Mail Ship",
             "Royal Majesty Service",
             "Regular Maritime Schedule ",
             "Regulated Maelstrom Sensor"
-        ]
+        ],
+        "id": 25
     },
     {
         "category": "Entertainment: Video Games",
         "type": "multiple",
         "difficulty": "medium",
         "question": "The walls of the Goldenrod City Gym in &quot;Pok&eacute;mon Gold and Silver&quot; are arranged in the shape of which Pok&eacute;mon?",
-        "correct_answer": "Clefairy",
-        "incorrect_answers": ["Bulbasaur", "Pikachu", "Pidgey"]
+        "correctAnswer": "Clefairy",
+        "answers": ["Clefairy", "Bulbasaur", "Pikachu", "Pidgey"],
+        "id": 26
     },
     {
         "category": "Entertainment: Video Games",
         "type": "multiple",
         "difficulty": "hard",
         "question": "Which gaming series includes &quot;The Diabolical Box&quot; and &quot;The Curious Village&quot;?",
-        "correct_answer": "Professor Layton",
-        "incorrect_answers": ["Persona", "Etrian Odyssey", "Sam &amp; Max"]
+        "correctAnswer": "Professor Layton",
+        "answers": [
+            "Professor Layton",
+            "Persona",
+            "Etrian Odyssey",
+            "Sam &amp; Max"
+        ],
+        "id": 27
     },
     {
         "category": "Entertainment: Video Games",
         "type": "multiple",
         "difficulty": "hard",
         "question": "In World of Warcraft, which raid instance features a chess event?",
-        "correct_answer": "Karazhan",
-        "incorrect_answers": [
+        "correctAnswer": "Karazhan",
+        "answers": [
+            "Karazhan",
             "Zul&#039;Aman",
             "Blackwing Lair",
             "Temple of Ahn&#039;Qiraj"
-        ]
+        ],
+        "id": 28
     },
     {
         "category": "Geography",
         "type": "multiple",
         "difficulty": "medium",
         "question": "What is the capital of Lithuania?",
-        "correct_answer": "Vilnius",
-        "incorrect_answers": ["Tallinn", "Helsinki", "Riga"]
+        "correctAnswer": "Vilnius",
+        "answers": ["Vilnius", "Tallinn", "Helsinki", "Riga"],
+        "id": 29
     },
     {
         "category": "Entertainment: Board Games",
         "type": "multiple",
         "difficulty": "medium",
         "question": "Europa Universalis is a strategy video game based on which French board game?",
-        "correct_answer": "Europa Universalis",
-        "incorrect_answers": [
+        "correctAnswer": "Europa Universalis",
+        "answers": [
+            "Europa Universalis",
             "Europe and the Universe",
             "Europa!",
             "Power in Europe"
-        ]
+        ],
+        "id": 30
     },
     {
         "category": "Entertainment: Film",
         "type": "multiple",
         "difficulty": "hard",
         "question": "In Big Hero 6, what were Baymax&#039;s motions modeled after?",
-        "correct_answer": "Baby penguins",
-        "incorrect_answers": ["Baby monkeys", "Baby ostriches", "Baby bears"]
+        "correctAnswer": "Baby penguins",
+        "answers": [
+            "Baby penguins",
+            "Baby monkeys",
+            "Baby ostriches",
+            "Baby bears"
+        ],
+        "id": 31
     },
     {
         "category": "Geography",
         "type": "multiple",
         "difficulty": "easy",
         "question": "The Alps are a mountain range on which continent?",
-        "correct_answer": "Europe",
-        "incorrect_answers": ["North America", "Asia", "Africa"]
+        "correctAnswer": "Europe",
+        "answers": ["Europe", "North America", "Asia", "Africa"],
+        "id": 32
     },
     {
         "category": "General Knowledge",
         "type": "multiple",
         "difficulty": "medium",
         "question": "Which country has the most Trappist breweries?",
-        "correct_answer": "Belgium",
-        "incorrect_answers": ["Netherlands", "France", "USA"]
+        "correctAnswer": "Belgium",
+        "answers": ["Belgium", "Netherlands", "France", "USA"],
+        "id": 33
     },
     {
         "category": "Geography",
         "type": "multiple",
         "difficulty": "medium",
         "question": "What is the official national language of Pakistan?",
-        "correct_answer": "Urdu",
-        "incorrect_answers": ["Indian", "Punjabi", "Pashto"]
+        "correctAnswer": "Urdu",
+        "answers": ["Urdu", "Indian", "Punjabi", "Pashto"],
+        "id": 34
     },
     {
         "category": "Entertainment: Film",
         "type": "multiple",
         "difficulty": "medium",
         "question": "Which actor and martial artist starred as Colonel Guile in the 1994 action film adaptation of Street Fighter?",
-        "correct_answer": "Jean-Claude Van Damme",
-        "incorrect_answers": ["Chuck Norris", "Steven Seagal", "Scott Adkins"]
+        "correctAnswer": "Jean-Claude Van Damme",
+        "answers": [
+            "Jean-Claude Van Damme",
+            "Chuck Norris",
+            "Steven Seagal",
+            "Scott Adkins"
+        ],
+        "id": 35
     },
     {
         "category": "Sports",
         "type": "multiple",
         "difficulty": "easy",
         "question": "Which boxer was banned for taking a bite out of Evander Holyfield&#039;s ear in 1997?",
-        "correct_answer": "Mike Tyson",
-        "incorrect_answers": [
+        "correctAnswer": "Mike Tyson",
+        "answers": [
+            "Mike Tyson",
             "Roy Jones Jr.",
             "Evander Holyfield",
             "Lennox Lewis"
-        ]
+        ],
+        "id": 36
     },
     {
         "category": "Mythology",
         "type": "multiple",
         "difficulty": "medium",
         "question": "According to Japanese folklore, what is the favorite food of the Kappa.",
-        "correct_answer": "Cucumbers",
-        "incorrect_answers": ["Kabocha", "Nasu", "Soba"]
+        "correctAnswer": "Cucumbers",
+        "answers": ["Cucumbers", "Kabocha", "Nasu", "Soba"],
+        "id": 37
     },
     {
         "category": "History",
         "type": "multiple",
         "difficulty": "easy",
         "question": "What was the name commonly given to the ancient trade routes that connected the East and West of Eurasia?",
-        "correct_answer": "Silk Road",
-        "incorrect_answers": ["Spice Road", "Clay Road", "Salt Road"]
+        "correctAnswer": "Silk Road",
+        "answers": ["Silk Road", "Spice Road", "Clay Road", "Salt Road"],
+        "id": 38
     },
     {
         "category": "General Knowledge",
         "type": "multiple",
         "difficulty": "easy",
         "question": "When someone is cowardly, they are said to have what color belly?",
-        "correct_answer": "Yellow",
-        "incorrect_answers": ["Green", "Red", "Blue"]
+        "correctAnswer": "Yellow",
+        "answers": ["Yellow", "Green", "Red", "Blue"],
+        "id": 39
     },
     {
         "category": "Entertainment: Video Games",
         "type": "multiple",
         "difficulty": "easy",
         "question": "In Counter-Strike: Global Offensive, what&#039;s the rarity of discontinued skins called?",
-        "correct_answer": "Contraband",
-        "incorrect_answers": ["Discontinued", "Diminshed", "Limited"]
+        "correctAnswer": "Contraband",
+        "answers": ["Contraband", "Discontinued", "Diminshed", "Limited"],
+        "id": 40
     },
     {
         "category": "Science & Nature",
         "type": "multiple",
         "difficulty": "hard",
         "question": "Autosomal-dominant Compelling Helio-Ophthalmic Outburst syndrome is the need to do what when seeing the Sun?",
-        "correct_answer": "Sneeze",
-        "incorrect_answers": ["Cough", "Yawn", "Hiccup"]
+        "correctAnswer": "Sneeze",
+        "answers": ["Sneeze", "Cough", "Yawn", "Hiccup"],
+        "id": 41
     },
     {
         "category": "Entertainment: Japanese Anime & Manga",
         "type": "multiple",
         "difficulty": "medium",
         "question": "Which of these is not a world in the anime &quot;Buddyfight&quot;?",
-        "correct_answer": "Ancient Dragon World",
-        "incorrect_answers": [
+        "correctAnswer": "Ancient Dragon World",
+        "answers": [
+            "Ancient Dragon World",
             "Dragon World",
             "Star Dragon World",
             "Darkness Dragon World"
-        ]
+        ],
+        "id": 42
     },
     {
         "category": "Science & Nature",
         "type": "multiple",
         "difficulty": "hard",
         "question": "Which of these animals belongs in class Chondrichthyes?",
-        "correct_answer": "Great white shark",
-        "incorrect_answers": ["Octopus", "Killer whale", "Catfish"]
+        "correctAnswer": "Great white shark",
+        "answers": ["Great white shark", "Octopus", "Killer whale", "Catfish"],
+        "id": 43
     },
     {
         "category": "History",
         "type": "multiple",
         "difficulty": "easy",
         "question": "Abolitionist John Brown raided the arsenal in which Virginia Town?",
-        "correct_answer": "Harper&#039;s Ferry",
-        "incorrect_answers": ["Richmond", "Harrisonburg", "Martinsburg"]
+        "correctAnswer": "Harper&#039;s Ferry",
+        "answers": [
+            "Harper&#039;s Ferry",
+            "Richmond",
+            "Harrisonburg",
+            "Martinsburg"
+        ],
+        "id": 44
     },
     {
         "category": "Entertainment: Video Games",
         "type": "multiple",
         "difficulty": "medium",
         "question": "In Sid Meier&#039;s Civilization V, which World Wonder can only be built in cities on or next to a desert?",
-        "correct_answer": "Petra",
-        "incorrect_answers": [
+        "correctAnswer": "Petra",
+        "answers": [
+            "Petra",
             "The Pyramids",
             "Alhambra",
             "Mausoleum of Maussollos"
-        ]
+        ],
+        "id": 45
     },
     {
         "category": "Entertainment: Video Games",
         "type": "multiple",
         "difficulty": "medium",
         "question": "What is the mod &quot;Cry of Fear&quot; based off of?",
-        "correct_answer": "Half-Life",
-        "incorrect_answers": [
+        "correctAnswer": "Half-Life",
+        "answers": [
+            "Half-Life",
             "Counter Strike: Source",
             "Half-Life 2",
             "It&#039;s a stand alone game, not a mod"
-        ]
+        ],
+        "id": 46
     },
     {
         "category": "Entertainment: Video Games",
         "type": "multiple",
         "difficulty": "medium",
         "question": "In which U.S. state is Far Cry 5&#039;s fictional setting &#039;Hope County&#039; located?",
-        "correct_answer": "Montana",
-        "incorrect_answers": ["Idaho", "Wyoming", "North Carolina"]
+        "correctAnswer": "Montana",
+        "answers": ["Montana", "Idaho", "Wyoming", "North Carolina"],
+        "id": 47
     },
     {
         "category": "Entertainment: Cartoon & Animations",
         "type": "multiple",
         "difficulty": "medium",
         "question": "Which singer provided the voice of Metroid&#039;s Mother Brain in the animated series &quot;Captain N: The Game Master&quot;?",
-        "correct_answer": "Levi Stubbs",
-        "incorrect_answers": ["Freddie Mercury", "Janet Jackson", "Joan Jett"]
+        "correctAnswer": "Levi Stubbs",
+        "answers": [
+            "Levi Stubbs",
+            "Freddie Mercury",
+            "Janet Jackson",
+            "Joan Jett"
+        ],
+        "id": 48
     },
     {
         "category": "Entertainment: Comics",
         "type": "multiple",
         "difficulty": "hard",
         "question": "Better known by his nickname Logan, what is Wolverine&#039;s birth name?",
-        "correct_answer": "James Howlett",
-        "incorrect_answers": ["Logan Wolf", "Thomas Wilde", "John Savage"]
+        "correctAnswer": "James Howlett",
+        "answers": [
+            "James Howlett",
+            "Logan Wolf",
+            "Thomas Wilde",
+            "John Savage"
+        ],
+        "id": 49
     }
 ]
