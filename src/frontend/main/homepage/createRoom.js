@@ -67,7 +67,12 @@ class CreateRoom extends Component {
     `
             : '';
 
+    updateChildrenProps = () => {
+        this.updateChildProps('nameInput', { initialValue: this.username });
+    };
+
     render = () => {
+        this.updateChildrenProps();
         return `
             <div id='${this.id}' class="create-room-container">
                 <span class="title">Create room</span>

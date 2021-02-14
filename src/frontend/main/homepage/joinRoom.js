@@ -4,15 +4,17 @@ import { Input, ErrorsContainer } from 'main/components';
 import ReturnToMenu from './returnToMenu';
 
 const ROOM_ERROR = 'Room not found! :(';
+const USERNAME_ERROR = 'Username can not be empty! Please add something ^_^';
 
-class CreateRoom extends Component {
+class JoinRoom extends Component {
     constructor(props) {
         super(props, {
-            error: false,
+            error: null,
         });
         this.initChildComponents();
 
         this.roomName = '';
+        this.username = '';
     }
 
     initChildComponents = () => {
@@ -23,15 +25,24 @@ class CreateRoom extends Component {
         this.addChild(
             'roomInput',
             new Input({
-                onChange: this.onNameChange,
+                onChange: this.onRoomNameChange,
                 label: 'Room',
                 initialValue: this.roomName,
             })
         );
         this.addChild(
+            'usernameInput',
+            new Input({
+                onChange: this.onUsernameNameChange,
+                label: 'Username',
+                initialValue: this.username,
+                className: 'join-room-username-form',
+            })
+        );
+        this.addChild(
             'errors',
             new ErrorsContainer({
-                errors: [ROOM_ERROR],
+                errors: null,
                 onClose: () => this.setError(false),
             })
         );
@@ -41,20 +52,32 @@ class CreateRoom extends Component {
         this.addEventByClassName('join', 'click', this.onJoin);
     };
 
-    onNameChange = (username) => {
+    onRoomNameChange = (roomName) => {
+        this.roomName = roomName;
+    };
+
+    onUsernameNameChange = (username) => {
         this.username = username;
     };
 
-    setError = (isError) => {
+    setError = (error) => {
         this.setState({
             ...this.state,
-            error: isError,
+            error: error,
         });
     };
 
     onJoin = () => {
+        const errors = [];
         if (!this.roomName) {
-            this.setError(true);
+            errors.push(ROOM_ERROR);
+        }
+        if (!this.username) {
+            errors.push(USERNAME_ERROR);
+        }
+        if (errors.length > 0) {
+            this.setError(errors);
+            return;
         }
     };
 
@@ -67,11 +90,19 @@ class CreateRoom extends Component {
     `
             : '';
 
+    updateChildrenProps = () => {
+        this.updateChildProps('errors', { errors: this.state.error });
+        this.updateChildProps('roomInput', { initialValue: this.roomName });
+        this.updateChildProps('usernameInput', { initialValue: this.username });
+    };
+
     render = () => {
+        this.updateChildrenProps();
         return `
             <div id='${this.id}' class="join-room-container">
                 <span class="title">Join room</span>
                 ${this.child('roomInput').render()}
+                ${this.child('usernameInput').render()}
                 <div class="join">Join</div>
                 ${this.renderErrors()}
                 ${this.child('returnToMenu').render()}
@@ -80,4 +111,4 @@ class CreateRoom extends Component {
     };
 }
 
-export default CreateRoom;
+export default JoinRoom;

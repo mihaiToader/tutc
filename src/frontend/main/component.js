@@ -26,6 +26,11 @@ class Component {
 
     child = (name) => this.children[name];
 
+    updateChildProps = (name, newProp) => {
+        const child = this.child(name);
+        child.props = { ...child.props, ...newProp };
+    };
+
     root = () => {
         return document.getElementById(this.id);
     };

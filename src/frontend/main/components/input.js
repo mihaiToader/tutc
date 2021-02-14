@@ -13,7 +13,10 @@ class Input extends Component {
 
     render = () => {
         return `
-            <div id='${this.id}' class='form-group'>
+            <div id='${this.id}' class='${[
+            'form-group',
+            this.props.className,
+        ].join(' ')}'>
                 <span>${this.props.label}</span>
                 <input class='form-field' value='${
                     this.props.initialValue || ''
