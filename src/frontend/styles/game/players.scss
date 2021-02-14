@@ -1,0 +1,33 @@
+.players-container {
+    position: absolute;
+    height: 100px;
+    overflow: auto;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    border-top: 1px solid brown;
+    flex-direction: column;
+
+    .top-description {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        > div {
+            width: 50%;
+            text-align: center;
+        }
+    }
+
+    .player {
+        font-size: 14px;
+        width: 100%;
+        display: flex;
+        > div {
+            width: 50%;
+            text-align: center;
+        }
+    }
+}

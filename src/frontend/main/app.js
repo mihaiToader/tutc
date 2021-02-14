@@ -20,7 +20,6 @@ class App extends Component {
     }
 
     onStartGame = (gameData) => {
-        console.log(gameData);
         this.setState({
             ...this.state,
             gameData,
@@ -37,6 +36,7 @@ class App extends Component {
     renderContent = () => {
         if (this.state.gameData) {
             this.updateChildProps('game', this.state.gameData);
+            this.getChild('game').onOpen();
             return this.child('game');
         }
 

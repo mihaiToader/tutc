@@ -1,18 +1,32 @@
 import Component from 'main/component';
+import gameWebSocket from './gameWebSocket';
+import Players from './players';
 
 class Game extends Component {
     constructor(props) {
         super(props);
         this.initChildComponents();
+
+        gameWebSocket.registerCallback('admin-left', this.props.onBack);
     }
 
-    initChildComponents = () => {};
+    initChildComponents = () => {
+        this.addChild('players', new Players());
+    };
 
     onMount = () => {
         this.addEventByClassName('back-to-menu', 'click', this.onLeave);
     };
 
+    onOpen = () => {
+        gameWebSocket.onUserJoined({
+            username: this.props.username,
+            room: this.props.room,
+        });
+    };
+
     onLeave = () => {
+        gameWebSocket.onUserLeft();
         this.props.onBack();
     };
 
@@ -27,6 +41,7 @@ class Game extends Component {
                     Return to menu
                 </div>
             </div>
+            ${this.child('players')}
         </div>
     `;
 }

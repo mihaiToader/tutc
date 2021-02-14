@@ -2,14 +2,9 @@ const fs = require('fs');
 const ws = require('ws');
 
 class Game {
-    rooms = {
-        tn18r7b: {
-            admin: 'Muie',
-            players: [],
-            started: false,
-            adminJoined: false,
-        },
-    };
+    rooms = {};
+
+    clients = {};
 
     constructor() {
         this.questions = JSON.parse(
@@ -17,10 +12,90 @@ class Game {
         );
     }
 
+    getRoom = (roomName) => this.rooms[roomName];
+
+    sendMessage = (data, socket) => {
+        socket.send(JSON.stringify(data));
+    };
+
+    sendPlayerList = (room) => {
+        room.players.forEach((player) => {
+            this.sendMessage(
+                {
+                    event: 'update-player-list',
+                    data: {
+                        players: room.players.map(
+                            ({ username, correctAnswers }) => ({
+                                username,
+                                correctAnswers,
+                            })
+                        ),
+                    },
+                },
+                player.socket
+            );
+        });
+    };
+
+    onUserJoined = (socket, data) => {
+        const room = this.getRoom(data.room);
+        room.players.push({
+            username: data.username,
+            id: socket.id,
+            socket: socket,
+            correctAnswers: 0,
+        });
+        if (data.username === room.admin.username) {
+            room.admin.id = socket.id;
+        }
+        this.clients[socket.id] = data.room;
+        this.sendPlayerList(room);
+    };
+
+    onUserDisconnected = (userID) => {
+        const roomName = this.clients[userID];
+        const room = this.rooms[roomName];
+        if (!room) {
+            return;
+        }
+
+        if (userID === room.admin.id) {
+            room.players
+                .filter((player) => player.id !== userID)
+                .forEach((player) => {
+                    this.sendMessage(
+                        {
+                            event: 'admin-left',
+                        },
+                        player.socket
+                    );
+                });
+            delete this.rooms[roomName];
+            return;
+        }
+
+        room.players = room.players.filter((player) => player.id !== userID);
+        this.sendPlayerList(room);
+    };
+
     setupWS = (wsServer) => {
+        const generateClientID = () => Math.random().toString(36).substr(2, 10);
+
         wsServer.on('connection', (socket) => {
-            socket.on('message', (data) => {
-                console.log(data);
+            socket.id = generateClientID();
+
+            socket.on('message', (messageData) => {
+                const message = JSON.parse(messageData);
+                const { event, data } = message;
+                if (event === 'user-joined') {
+                    this.onUserJoined(socket, data);
+                } else if (event === 'user-left') {
+                    this.onUserDisconnected(socket.id);
+                }
+            });
+
+            socket.on('close', () => {
+                this.onUserDisconnected(socket.id);
             });
         });
     };
@@ -36,7 +111,10 @@ class Game {
 
             const roomName = Math.random().toString(36).substr(2, 7);
             this.rooms[roomName] = {
-                admin: username,
+                admin: {
+                    username,
+                    id: '',
+                },
                 players: [],
                 started: false,
             };
@@ -52,7 +130,7 @@ class Game {
             const usernameAvailable =
                 !!room &&
                 !room.players.includes(req.params.username) &&
-                room.admin !== req.params.username;
+                room.admin.username !== req.params.username;
             res.send({ available, usernameAvailable });
             res.end();
         });
