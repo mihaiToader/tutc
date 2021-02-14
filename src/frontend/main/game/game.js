@@ -2,6 +2,7 @@ import Component from 'main/component';
 import gameWebSocket from './gameWebSocket';
 import Players from './players';
 import GameField from './gameField';
+import GameTimer from './gameTimer';
 
 class Game extends Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class Game extends Component {
     initChildComponents = () => {
         this.addChild('players', new Players());
         this.addChild('gameField', new GameField(this.props));
+        this.addChild('timer', new GameTimer());
     };
 
     onMount = () => {
@@ -39,6 +41,7 @@ class Game extends Component {
                     <div>Username: ${this.props.username}</div>
                     <div>Room: ${this.props.room}</div>
                 </div>
+                ${this.child('timer')}
                 <div class="back-to-menu">
                     Return to menu
                 </div>

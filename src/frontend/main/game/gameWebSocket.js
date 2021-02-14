@@ -24,7 +24,6 @@ class GameWebSocket {
 
     onMessage = (messageEvent) => {
         const { event, data } = JSON.parse(messageEvent.data);
-        console.log(event, data);
         if (!this.callbacks[event]) {
             return;
         }
